@@ -41,9 +41,9 @@ export const AskQuestion = async (req, res) => {
 
   export const voteQuestion = async (req, res) => {
     const { id: _id } = req.params;
-    const { value,userId} = req.body;
+    const { value} = req.body;
     console.log("value",value)
-    // const userId = req.userId;
+    const userId = req.userId;
   
     if (!mongoose.Types.ObjectId.isValid(_id)) {
       return res.status(404).send("question unavailable...");
